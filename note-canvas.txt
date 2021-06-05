@@ -1,0 +1,15 @@
+WEBPACK
+  npm i -D webpack webpack-cli css-loader style-loader
+
+BABEL
+  npm install -D babel-loader @babel/core @babel/preset-env webpack
+
+  
+  
+  
+  npm install webpack webpack-cli -D
+    ( buid: "webpack --config webpack.config.js" )
+
+WEBPACK - CSS
+  npm install css-loader -D
+  npm install style-loader -D
