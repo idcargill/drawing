@@ -1,15 +1,17 @@
-WEBPACK
-  npm i -D webpack webpack-cli css-loader style-loader
+CANVAS
+  <canvas id="sketch" w= h=></canvas>
 
-BABEL
-  npm install -D babel-loader @babel/core @babel/preset-env webpack
+  const ctx = sketch.getContext('2d')
 
   
-  
-  
-  npm install webpack webpack-cli -D
-    ( buid: "webpack --config webpack.config.js" )
 
-WEBPACK - CSS
-  npm install css-loader -D
-  npm install style-loader -D
+Rectangle
+  fillRect(x, y, width, height)
+    Drass a filled rect
+
+  strokeRect(x, y, width, height)
+    Draws a rect outline
+
+  clearRect(x,y, width, height)
+    Clears the speccified rect area - transparent
+    
