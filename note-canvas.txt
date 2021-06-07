@@ -34,6 +34,15 @@ LINES
   lineTo(x, y)
   stroke() / fill()
 
+LINE STYLES:
+  lineWidth = value
+  lineCap = type  [butt, round, square]
+  lineJoin = type [round, bevel, miter]
+  miterLimit = value (limit on the miter wheen 2 lines join)
+  getLineDash() ( return curren line dash pattern array)
+  setLineDash(segments)   set current line dash pattern.
+  lineDashOffset = value
+
 ARCS 
   arc(x, y, radius, startAngle, endAngle, counterclockwise(bool))
    -centerd on x,y with radius 
@@ -41,3 +50,19 @@ ARCS
 
   arcTo(x1, y1, x2, y2, radius)
    -draws arc with given points and radius, connected to previous point.
+
+
+STYLE:
+  ctx.strokeStyle =
+  ctx.fillStyle = 
+Transparency / rgba(x, x, x, a)
+
+PATTERNS
+  createPattern(image, type)
+    type([repeat, repeat-x, repeat-y, no-repeat])
+
+SHADOWS
+  
+FILL Rules
+  "nonzero"
+  "evenodd"
