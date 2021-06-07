@@ -1,4 +1,4 @@
-function pacDraw() {
+function pacMan() {
   var canvas = document.getElementById('sketch');
   if (canvas.getContext) {
     var ctx = canvas.getContext('2d');
@@ -82,4 +82,4 @@ function roundedRect(ctx, x, y, width, height, radius) {
   ctx.stroke();
 }
 
-export default pacDraw;
+export default pacMan;
