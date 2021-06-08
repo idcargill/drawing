@@ -1,18 +1,77 @@
-WEBPACK
-  npm i -D webpack webpack-cli css-loader style-loader
+CANVAS
+  <canvas id="sketch" w= h=></canvas>
 
-BABEL
-  npm install -D babel-loader @babel/core @babel/preset-env webpack
+  - get context of canvas
+  const ctx = sketch.getContext('2d')
 
+  beginPath() 
+  moveTo(x,y)
   
-  
-  
-  npm install webpack webpack-cli -D
-    ( buid: "webpack --config webpack.config.js" )
+Rectangle
+  fillRect(x, y, width, height)
+    Drass a filled rect
 
+  strokeRect(x, y, width, height)
+    Draws a rect outline
+
+  clearRect(x,y, width, height)
+    Clears the speccified rect area - transparent
+    
+
+PATHS
+  beginPath()
+    Create new path 
+  
+  PATH METHODS:
+  closePath() adds a straight line to the path
+  stroke()    draws a shape by stroking it's outline
+  fill()      draws a solid shape
+
+LINES
+  beginPath();
+  moveTo(x, y) - head location (pen)
+  lineTo(x, y)
+  lineTo(x, y)
+  stroke() / fill()
+
+LINE STYLES:
+  lineWidth = value
+  lineCap = type  [butt, round, square]
+  lineJoin = type [round, bevel, miter]
+  miterLimit = value (limit on the miter wheen 2 lines join)
+  getLineDash() ( return curren line dash pattern array)
+  setLineDash(segments)   set current line dash pattern.
+  lineDashOffset = value
+
+<<<<<<< HEAD
 
 
 Loaders
   npm install eslint-loader -D
   npm install css-loader -D
   npm install style-loader -D
+=======
+ARCS 
+  arc(x, y, radius, startAngle, endAngle, counterclockwise(bool))
+   -centerd on x,y with radius 
+   - angle measurements are in Radians 
+
+  arcTo(x1, y1, x2, y2, radius)
+   -draws arc with given points and radius, connected to previous point.
+
+
+STYLE:
+  ctx.strokeStyle =
+  ctx.fillStyle = 
+Transparency / rgba(x, x, x, a)
+
+PATTERNS
+  createPattern(image, type)
+    type([repeat, repeat-x, repeat-y, no-repeat])
+
+SHADOWS
+  
+FILL Rules
+  "nonzero"
+  "evenodd"
+>>>>>>> 5efa455d8bdf58d5f1ba15d9951a0a7d9a663130
