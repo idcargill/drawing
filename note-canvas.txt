@@ -10,6 +10,9 @@ BABEL
   npm install webpack webpack-cli -D
     ( buid: "webpack --config webpack.config.js" )
 
-WEBPACK - CSS
+
+
+Loaders
+  npm install eslint-loader -D
   npm install css-loader -D
   npm install style-loader -D
