@@ -1,8 +1,31 @@
 body {
-  text-align: center;
-  background-color: rgba(177, 177, 177, 0.993);
+	text-align: center;
+	background-color: rgba(177, 177, 177, 0.993);
 }
 
-/* #sketch {
-	background-color: white;
-} */
+.container {
+	max-width: 600px;
+	text-align: center;
+	margin: auto;
+	margin-top: 8%;
+}
+
+.button-container {
+	/* padding: 5px; */
+	display: flex;
+	flex-direction: row;
+}
+
+button,
+input {
+	/* padding: 10px; */
+	border-radius: 5px;
+	width: 70px;
+	height: 40px;
+	display: inline-flexbox;
+	margin: 5px;
+}
+
+button:hover {
+	background-color: rgb(94, 236, 58);
+}
