@@ -25,9 +25,21 @@ const ctx = sketch.getContext('2d');
 // help.drawLine([100, 100], [205, 210], 3);
 // help.square(100, 200, 100, 20, 'fill');
 
-var points = [];
 let polyOn = 0;
+let color = document.querySelector('#color-pick').value;
+
+function polyLines(pointList) {
+	ctx.beginPath();
+	ctx.fillStyle = color;
+	ctx.moveTo(pointList[0][0], pointList[0][1]);
+	pointList.forEach((i) => {
+		ctx.lineTo(i[0], i[1]);
+		ctx.stroke();
+	});
+}
+
 function polyButton() {
+	var points = [];
 	polyOn = 1;
 	let color = 0;
 	let colorPicker = document.querySelector('#color-pick');
@@ -36,16 +48,6 @@ function polyButton() {
 	});
 	console.log(color);
 
-	function polyLines() {
-		ctx.beginPath();
-		ctx.fillStyle = color;
-		ctx.moveTo(points[0][0], points[0][1]);
-		points.forEach((i) => {
-			ctx.lineTo(i[0], i[1]);
-			ctx.stroke();
-		});
-	}
-
 	function createPoly(ev) {
 		const sketch = document.querySelector('canvas');
 		const box = sketch.getBoundingClientRect();
@@ -53,18 +55,48 @@ function polyButton() {
 		const cY = ev.clientY - box.top;
 		ctx.beginPath();
 		ctx.strokeStyle = color;
-		ctx.fillRect(cX, cY, 5, 5);
+		ctx.fillRect(cX, cY, 1, 1);
 		ctx.stroke();
 		points.push([cX, cY]);
-		polyLines();
+		polyLines(points);
 		console.log(polyOn);
+		// console.log(ev);
 	}
 	sketch.addEventListener('mousedown', createPoly);
+	document.querySelector('#clear').addEventListener('click', () => {
+		points = [];
+	});
+}
+
+function freeDraw(ev) {
+	const drawPoints = [];
+
+	function draw() {
+		const sketch = document.querySelector('canvas');
+		const box = sketch.getBoundingClientRect();
+		const drawCtx = sketch.getContext('2d');
+		drawCtx.beginPath();
+		const x = ev.clientX - box.left;
+		const y = ev.clientY - box.top;
+		drawCtx.stroke();
+		drawPoints.push([x, y]);
+		polyLines(drawPoints);
+
+		console.log(ev);
+	}
+	sketch.addEventListener('mousedown', () => {
+		if (ev) {
+			console.log(ev);
+		}
+	});
+
+	document.querySelector('#clear').addEventListener('click', () => {
+		drawPoints = [];
+	});
 }
 
 // Clear Button
 function clearAll() {
-	points = [];
 	polyOn = 0;
 	console.log(polyOn);
 	ctx.clearRect(0, 0, 400, 400);
@@ -75,3 +107,5 @@ btn.addEventListener('click', clearAll);
 
 const polyBtn = document.querySelector('#poly-btn');
 polyBtn.addEventListener('click', polyButton);
+
+document.querySelector('#draw').addEventListener('click', freeDraw);
