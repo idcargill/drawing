@@ -56,7 +56,7 @@ sketch.addEventListener('mouseup', () => {
 
 // Clear Button - clears canvas
 function clearAll() {
-	ctx.clearRect(0, 0, 400, 400);
+	ctx.clearRect(0, 0, 800, 800);
 }
 
 // Activate Clear Button event

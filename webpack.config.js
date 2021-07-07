@@ -5,12 +5,12 @@ module.exports = {
 	mode: 'development',
 	output: {
 		filename: 'main.js',
-		path: path.resolve(__dirname, 'dist'),
+		path: path.resolve(__dirname, 'docs/dist'),
 	},
 	// watch: true,
 	devServer: {
 		hot: true,
-		contentBase: path.join(__dirname, 'dist'),
+		contentBase: path.join(__dirname, 'docs/dist'),
 		compress: true,
 		port: 9000,
 	},
