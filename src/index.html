@@ -8,25 +8,35 @@
 		<title>FACE FACE</title>
 	</head>
 	<body>
-		<h1>FACE FACE</h1>
-		<div class="container">
-			<div class="button-container">
-				<button id="clear">Clear</button>
-				<button id="poly-btn">Polygon</button>
-				<button id="draw">Free Hand</button>
-				<div class="style">
-					<input id="color-pick" type="color" />
-					<input id="brush" type="range" name="brush" min="1" max="30" />
+		<page>
+			<div class="container">
+				<header>FACE FACE</header>
+				<div class="button-container">
+					<button id="clear" class="eraser-btns">Clear</button>
+					<button id="eraser" class="eraser-btns">Eraser</button>
+					<button id="poly-btn">Polygon</button>
+					<button id="draw">Free Hand</button>
+					<button id="face">Face</button>
+					<button id="face">Eyes</button>
+					<button id="face">Mouth</button>
+					<div class="style">
+						<input id="color-pick" type="color" />
+						<input id="brush" type="range" name="brush" min="1" max="30" />
+					</div>
 				</div>
+				<div class="file-container">
+					<button id="save-img-btn" type="button">Save Face</button>
+				</div>
+				<canvas
+					id="sketch"
+					height="600"
+					width="800"
+					style="border: 1px solid black"
+				>
+				</canvas>
 			</div>
-			<canvas
-				id="sketch"
-				height="600"
-				width="800"
-				style="border: 1px solid black"
-			>
-			</canvas>
-		</div>
-		<div id="root"></div>
+			<!--container-->
+			<div id="root"></div>
+		</page>
 	</body>
 </html>

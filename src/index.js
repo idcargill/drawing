@@ -1,6 +1,6 @@
 import '../style/main.css';
-import Canvas from './sketchFace';
 import $ from 'jquery';
+import Canvas from './sketchFace';
 import * as ex from './expamples';
 import * as help from './helpers';
 import smirkFace from './smirkFace';
@@ -19,11 +19,10 @@ const ctx = sketch.getContext('2d');
 const box = sketch.getBoundingClientRect();
 
 // COLOR SELECTOR
-let color = '';
+let color;
 let colorPicker = document.querySelector('#color-pick');
 colorPicker.addEventListener('change', () => {
 	let color = colorPicker.value;
-	console.log(color);
 });
 
 // BRUSH SIZE
@@ -55,13 +54,9 @@ sketch.addEventListener('mouseup', () => {
 });
 
 // Clear Button - clears canvas
-function clearAll() {
+document.querySelector('#clear').addEventListener('click', () => {
 	ctx.clearRect(0, 0, 800, 800);
-}
-
-// Activate Clear Button event
-const btn = document.querySelector('#clear');
-btn.addEventListener('click', clearAll);
+});
 
 // == EXAMPLES ========================
 // help.bubble(ctx, 200, 200, 20);
